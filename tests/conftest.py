@@ -18,7 +18,7 @@ import sys
 # third party
 import pytest
 
-# kickstart package
+# package
 import kickstart
 
 # noinspection PyCallByClass
@@ -30,9 +30,9 @@ def version_test() -> None:
     test version
     """
     # Setup code
-    sys.stdout.write('\nRunning setup code for kickstart module\n')
+    sys.stdout.write('\nRunning setup code for module\n')
 
     yield kickstart
 
     # tear down code
-    sys.stdout.write('Running Teardown code for kickstart module\n')
+    sys.stdout.write('Running Teardown code for module\n')

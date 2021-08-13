@@ -1,7 +1,7 @@
 """
 Showcasing two different ways to properly test your code
 
-1. By importing the kickstart package in directly.
+1. By importing the package in directly.
 2. By passing in a function fixture defined in conftest.py
 """
 import kickstart as ks

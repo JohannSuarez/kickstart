@@ -1,31 +1,30 @@
 [tool.poetry]
 name = "kickstart"
-version = "0.1.0"
-description = "A preconfigured Python package, using python poetry"
-authors = ["Matt Williams <mattinzhuhai@outlook.com>"]
+version = "1.0.0"
+description = "Poetry project set up and ready to go"
+authors = ["Matt Williams <mattltf@pm.me>"]
 
 [tool.poetry.dependencies]
 python = "^3.8"
 colorlog = "^4.7.2"
 colorama = "^0.4.4"
 python-dotenv = "^0.17.0"
-yapf = "^0.31.0"
 
 [tool.poetry.dev-dependencies]
 pytest = "^5.2"
 mypy = "^0.812"
 jedi = "^0.18.0"
 isort = "^5.7.0"
-yapf = "^0.31.0"
 pylint = "^2.7.2"
-ipython = "^7.21.0"
+black = "^21.7b0"
 
 [tool.poetry.scripts]
-drive = "kickstart.main:run"
+drive = "kickstarter.main:run"
 tests = "scripts.project_helper:run_tests"
 stubs = "scripts.project_helper:stub_gen"
 analyze = "scripts.project_helper:run_analyzer"
 
 [build-system]
 requires = ["poetry-core>=1.0.0"]
+
 build-backend = "poetry.core.masonry.api"

@@ -6,7 +6,6 @@ import subprocess as sp
 import sys
 
 import kickstart as ks
-# from kickstart import PKG_NAME, BASE_DIR
 
 
 def stub_gen() -> None:

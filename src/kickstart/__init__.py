@@ -2,8 +2,9 @@
 Package wide configurations
 """
 from pathlib import PosixPath
+from typing import Dict, Any
 
-__version__ = '0.1.0'
+__version__ = '1.0.0'
 
 # This dumps the log file to the root directory of the project
 BASE_DIR = PosixPath(__file__).resolve(strict=True).parent.parent.parent
@@ -14,7 +15,7 @@ BASE_DIR = PosixPath(__file__).resolve(strict=True).parent.parent.parent
 DEFAULT_LOGGER_NAME = 'dev'
 LOGGING_FILE_NAME = f'{__package__}-{__version__}.log'
 
-LOGGING_CONFIG = {
+LOGGING_CONFIG: Dict[str, Any] = {
     "version": 1,
     "disable_existing_loggers": False,
     "formatters": {
