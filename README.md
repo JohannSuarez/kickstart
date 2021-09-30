@@ -39,6 +39,11 @@ $ poetry run tests
 # use poetry python scripts to run the example driver program
 $ poetry run drive
 
+# you can also pass arguments to the drive script, like this
+
+$ poetry run drive -r
+$ poetry run drive --help
+
 # when drive is ran it will dump a log file in the project root, to change the
 # the destination of this file, change the value of BASE_DIR in src/kickstart/__init__.py
 ```
