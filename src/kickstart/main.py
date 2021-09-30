@@ -2,6 +2,7 @@
 Example Driver code
 """
 # standard lib
+import argparse
 
 # package
 from kickstart import Config
@@ -15,6 +16,22 @@ def run() -> None:
     """
     Example function to execute through poetry scripts
     """
+    parser = argparse.ArgumentParser(
+        prog="kickstart",
+        usage="%(prog)s [options]",
+        description="Example package",
+        allow_abbrev=False,
+    )
+    parser.add_argument(
+        "-r",
+        "--run",
+        action="store_true",
+    )
+
+    args = parser.parse_args()
+    if args.run:
+        logger.debug('Received -r as a command line argument')
+
     try:
         logger.info("APP_ENV: %s :: package name: %s@%s",
                     Config.env(), Config.package(), Config.version())
