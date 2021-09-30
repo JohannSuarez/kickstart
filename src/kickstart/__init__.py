@@ -50,7 +50,7 @@ class Config(metaclass=ThreadSafeMeta):
     """
     try:
         __config: Dict[str, Any] = dotenv_values('.env')
-        __version = "0.1.0"
+        __version = "1.0.0"
         __package: str = __package__
         __base_dir = Path(__file__).resolve(
             strict=True).parent.parent.parent
