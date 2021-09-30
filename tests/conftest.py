@@ -19,20 +19,20 @@ import sys
 import pytest
 
 # package
-import kickstart
+import kickstart as ks
 
 # noinspection PyCallByClass
 
 
 @pytest.fixture()
-def version_test() -> None:
+def pkg_test() -> None:
     """
     test version
     """
     # Setup code
     sys.stdout.write('\nRunning setup code for module\n')
 
-    yield kickstart
+    yield ks
 
     # tear down code
     sys.stdout.write('Running Teardown code for module\n')
