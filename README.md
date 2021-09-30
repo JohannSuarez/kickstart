@@ -24,8 +24,7 @@ poetry add mypy -D
 > create the a .env file in the project root with the following contents
 
 ```bash
-CAPTAIN_ONE=Picard
-CAPTAIN_TWO=Sisco
+APP_ENV=dev
 ```
 
 ## Simple tests are already set up, with an example conftest.py
@@ -42,9 +41,6 @@ $ poetry run drive
 
 # when drive is ran it will dump a log file in the project root, to change the
 # the destination of this file, change the value of BASE_DIR in src/kickstart/__init__.py
-
-# python __init__.py files have the same function as javascript index.js files
-# the __version__ variable and logging config are defined in src/kickstart/__init__.py
 ```
 
 ## A logger utilizing colorlog and colorama are already set up
@@ -54,6 +50,8 @@ $ poetry run drive
 # simple import it into your new module as so...
 
 from kickstart.logger import package_logger as pl
-logger = pl.PackageLogger().get_logger()
+logger = pl.Logger().get_logger()
+
+logger.info('This is a test')
 ```
 
