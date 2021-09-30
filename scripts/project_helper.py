@@ -5,18 +5,17 @@ pyproject.toml
 import subprocess as sp
 import sys
 
-import kickstart as ks
-
+from kickstart import Config
 
 def stub_gen() -> None:
     """
     Generate all function stubs
     for the package
     """
-    out_file = f"src/{ks.__package__}-stubs"
-    path = str(ks.BASE_DIR / 'src' / f'{ks.__package__}')
+    out_file = f"src/{Config.package()}-stubs"
+    path = str(Config.base_dir() / 'src' / f'{Config.package()}')
     try:
-        sp.run(f'stubgen -p {ks.__package__} -o {out_file}',
+        sp.run(f'stubgen -p {Config.package()} -o {out_file}',
                check=True,
                shell=True)
         sp.run(f'mypy {path}', check=True, shell=True)
@@ -29,7 +28,7 @@ def run_analyzer() -> None:
     """
     Run the mypy static type checking analyzer
     """
-    path = str(ks.BASE_DIR / 'src' / f'{ks.__package__}')
+    path = str(Config.base_dir() / 'src' / f'{Config.package()}')
     try:
         sp.run(f'mypy {path}', check=True, shell=True)
     except sp.CalledProcessError as error:
