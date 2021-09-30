@@ -14,7 +14,7 @@ class ThreadSafeMeta(type):
     This is a thread-safe implementation of Singleton.
     """
 
-    _instances = {}
+    _instances: Dict[Any, Any] = {}
 
     _lock: Lock = Lock()
 
